@@ -1,0 +1,4 @@
+->These are the we need to have if you are going to programming.
+(1)Text editer
+(2)Node js
+(3)
