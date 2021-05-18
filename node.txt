@@ -1,4 +1,10 @@
 ->These are the we need to have if you are going to programming.
 (1)Text editer
 (2)Node js
-(3)
+->Node js follows asynchronous,single thread and Non-blocking i/o.
+->Both Chromo and Node js use v8 engine.
+->what is packages?
+Ans:Packages are in term of supporting libary.
+if i want to develop any feature i simple go i pick any package my choise
+and start consuming that package.
+->npm-it stands for Node package Manager is a biggest repository which have large supporting libary.
