@@ -8,3 +8,37 @@ Ans:Packages are in term of supporting libary.
 if i want to develop any feature i simple go i pick any package my choise
 and start consuming that package.
 ->npm-it stands for Node package Manager is a biggest repository which have large supporting libary.
+->what is the package.json contain?
+ans:-Meta Data(name,version,description)
+   all packages
+   script(start,test)
+   this is the first file of application.
+Step to generate package.json
+-------------------------------
+->node js must be install in your system.
+how to check node js have installed or not:node -v
+->Go inside the folder using command form.
+->type npm init
+->Answer all the questions
+->type "yes"
+There are three kind of packages/dependency are There
+Local Dependency >local to the folder
+Global Dependency >local to the system
+Dev Dependency >Use only at the time of development.
+ 
+ Step to install Dev dependency:
+ ->Nodejs must be install in your system
+ ->Go Inside the folder using command
+ ->npm i package name --save-dev
+ Step to install Global Dependency:
+ ------------------------------------
+ ->install in the system directly
+ ->will not add on package.json
+ ->we need admin access to install
+ ->only package help to generate or run app will go Global
+ #Window:
+ ->open cmd as admin
+ ->npm i -g packagename
+ 
+
+
