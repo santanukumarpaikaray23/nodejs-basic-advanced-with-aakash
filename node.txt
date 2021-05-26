@@ -41,4 +41,10 @@ Dev Dependency >Use only at the time of development.
  ->npm i -g packagename
  
 
-
+->There are 4 operation is There.
+ C>Create
+ R>Read
+ U>Update
+ D>delete
+ ->nodemon will help us to run our server automatically.
+ 
