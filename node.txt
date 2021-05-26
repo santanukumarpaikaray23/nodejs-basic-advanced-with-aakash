@@ -47,4 +47,9 @@ Dev Dependency >Use only at the time of development.
  U>Update
  D>delete
  ->nodemon will help us to run our server automatically.
+ ->Application has deployed in multiple environment Dev>QA>Prod
+ ->if you are going to ui one package is need to be installed that is 
+ npm i dotenv
+ ->dotenv is the package which help you to read the env variable.
+ 
  
