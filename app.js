@@ -6,6 +6,13 @@ var morgan = require ('morgan')
 var fs = require ('fs');
 var chalk = require ('chalk');
  var port = process.env.PORT || 9000;
+ 
+ var menu=[
+     {link:'/',name:'Home'},
+     {link:'/hotel',name:'Home'},
+     {link:'/city',name:'City'}
+ ]
+
 //  var hotelRoute = require('./src/route/cityRoute');
 //  var cityRoute= require('./src/route/hotelRoute');
 var cityRoute = require('./src/router/cityRoutes');
@@ -19,13 +26,14 @@ app.set('views','./src/views');
 app.set('view engine','ejs')
   
 // morgan('tiny')
-app.use(morgan('tiny'))
+app.use(morgan('dev'))
+ app.use(morgan('dev',{stream: fs.createWriteStream('./app.log',{flags:'a'})}))
 
 
 
  app.get('/',function(req,res){
    //res.send("Hii from express")
-   res.render('index',{title:'Home Page'})
+   res.render('index',{title:'Home Page',memu:menu})
  })
  cityRoute.route('/')
  .get(function(req,res){
