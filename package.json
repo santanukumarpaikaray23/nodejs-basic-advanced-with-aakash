@@ -5,7 +5,7 @@
   "main": "fs.js",
   "scripts": {
     "start": "nodemon app.js",
-    "santanu": "nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "mongodb": "^3.6.9",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   }

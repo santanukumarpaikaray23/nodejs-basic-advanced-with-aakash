@@ -1,0 +1,23 @@
+->if you want to see what is in side the database cmd is:-show dbs
+->if you want to go inside any database cmd is:- use dbname
+->if you want to see all the collection cmd is:show collections
+////find query/////
+->How to find the data/select the data basically?
+ans:db.student.find() 
+db.orders.find()
+->When you are not able to run it properly at that time we will give the 
+cmd?
+->db.student.find().pretty()
+->if you want to findout specific record of pune the command is:
+ans:db.hotels.find({"city_name":"Pune"}).pretty()
+->By using Id also we can find the data>
+ans:db.hotels.find({"city":"1"}).pretty()
+////////Create Database/////////
+use junenode
+->Database is only visible to you when it have some records.
+->how to insert any name?
+->db.test.insert({name:"Santanu"})
+->db.test.insert({name:"santanu",class:"React"})
+->db.test.insert({_id:1,name:"Santanu",class:"Node"})
+->db.test.insert({_id:2,name:"Sidhanta",class:"Angular"})
+

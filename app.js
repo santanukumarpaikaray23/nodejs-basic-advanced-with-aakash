@@ -1,64 +1,46 @@
- var express = require ('express')
- var app =express();
- var dotenv = require('dotenv')
+var express = require('express');
+var app = express();
+var dotenv = require('dotenv');
 dotenv.config()
-var morgan = require ('morgan')
-var fs = require ('fs');
-var chalk = require ('chalk');
- var port = process.env.PORT || 9000;
- 
- var menu=[
-     {link:'/',name:'Home'},
-     {link:'/hotel',name:'Home'},
-     {link:'/city',name:'City'}
- ]
+var morgan =require('morgan')
+var fs = require ('fs')
+var chalk = require ('chalk')
+var port =process.env.PORT || 9000;
+var menu =[
+    {link:'/',name:'Home'},
+    {link:'/hotel',name:'Hotels'},
+    {link:'/city',name:'City'}
+    
 
-//  var hotelRoute = require('./src/route/cityRoute');
-//  var cityRoute= require('./src/route/hotelRoute');
-var cityRoute = require('./src/router/cityRoutes');
-var hotelRoute = require('./src/router/hotelRoutes');
+]
+var hotelRouter = require('./src/router/hotelRoutes')(menu);
+var cityRouter = require('./src/router/cityRoutes')(menu);
 
-//static File path
+
+//static File Path
 app.use(express.static(__dirname+'/public'))
 //html file
 app.set('views','./src/views');
 //view engine
 app.set('view engine','ejs')
-  
-// morgan('tiny')
-app.use(morgan('dev'))
- app.use(morgan('dev',{stream: fs.createWriteStream('./app.log',{flags:'a'})}))
 
 
 
- app.get('/',function(req,res){
-   //res.send("Hii from express")
-   res.render('index',{title:'Home Page',memu:menu})
- })
- cityRoute.route('/')
- .get(function(req,res){
-     res.send(city)
- })
- cityRoute.route('/details')
- .get(function(req,res){
-     res.send('city details')
-})
- hotelRoute.route('/')
-.get(function(req,res){
-    res.send(hotels)
-})
-app.use('/hotel',hotelRoute)
-app.use('/city',cityRoute)
+app.use(morgan('div'))
+app.use(morgan('div',{stream:fs.createWriteStream('./app.log',{flags:'a'})}))
 
-hotelRoute.route('/details')
-.get(function(req,res){
-    res.send('hotel details')
+app.get('/',function(req,res){
+    // res.send("Hii from express")
+    res.render('index',{title:'Home page',menu:menu})
+
 })
 
+app.use('/hotel',hotelRouter);
+app.use('/city',cityRouter)
 
 app.listen(port,function(err){
     if(err) throw err;
     else{
-        console.log(chalk.blue("Server is running on port"+port))
-    }
-})
+        console.log(chalk.blue("Server is running on port "+port))
+    } 
+});
